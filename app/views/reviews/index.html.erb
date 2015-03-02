@@ -12,7 +12,7 @@
 
 <!-- Main -->
 <div class='container'>
-<div class='well app'>
+<div class='well'>
 <!-- Show Reviews from app.js -->
   <div ng-controller='JsController as jsCtrl'>
     <h2> Book Reviews - from app.js </h2> 
@@ -68,7 +68,6 @@
               <button type="submit" class='btn btn-success'>Add Review</button>
             </div>
 
-            <p ng-if="createController.errors"> {{createController.errors}} </p>
 
     </form>
 </div>
@@ -126,6 +125,7 @@
                 <button type='submit' class= 'btn btn-success'> Add Review</button>
               </div>
 
+              <p ng-if="createController.errors"> {{createController.errors}} </p>
             </div>
       </form>
   </div>
