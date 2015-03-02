@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  starRating: 1
+  desc: MyString
+  reviewedBy: MyString
+
+two:
+  starRating: 1
+  desc: MyString
+  reviewedBy: MyString
