@@ -1,15 +1,16 @@
-(function() {
- var app = angular.module('bookReview',[]);
+angular.module('bookReview',[]);
 
 
-// Get data from bookrevs object below  
-  app.controller('JsController', function(){
+// Get data from bookrevs object below
+angular.module('bookReview')  
+  .controller('JsController', function(){
     this.bookreviews = bookreviews;
   });
 
 
 // push object
-    app.controller('ReviewController', function() {
+angular.module('bookReview')
+    .controller('ReviewController', function() {
     this.book = {};
      // push this book on to the bookrevs array 
     this.addReview = function(book) {
@@ -30,13 +31,14 @@
 
 //////////////////////// old syntax //////////////////////////////////////////////////
 // Get data from API
-  app.controller('DisplayBooksController',['$http', function($http){
+angular.module('bookReview')
+  .controller('DisplayBooksController', function($http){
     var self = this;
     self.books = [];
     $http.get('/reviews.json').success(function(data){
     self.books = data;
     });
-  }]);  
+  });  
 
 
 
@@ -57,4 +59,3 @@ angular.module('bookReview')
 
 
        
-})();
