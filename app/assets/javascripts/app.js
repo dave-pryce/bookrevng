@@ -42,21 +42,14 @@ angular.module('bookReview')
 
 
 
-// Put data to API
+// Post data to API
 angular.module('bookReview')
 .controller('AddReviewController', function($http) {
   var controller = this;
   this.saveReview = function(book){
-    controller.errors = null;
     $http({method: 'POST', url: '/reviews/new.json', data: book})
-    .catch(function(book) {
-      controller.errors = book.data.error;
-    });
-   };
-
-
+  };
 });
-
 
 
 

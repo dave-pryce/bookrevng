@@ -12,30 +12,30 @@
 
 <!-- Main -->
 <div class='container'>
-<div class='well'>
-<!-- Show Reviews from app.js -->
-  <div ng-controller='JsController as jsCtrl'>
-    <h2> Book Reviews - from app.js </h2> 
+  <div class='well'>
+  <!-- Show Reviews from app.js -->
+    <div ng-controller='JsController as jsCtrl'>
+      <h2> Book Reviews - from app.js </h2> 
 
-          <div class='col-md-12'>
-    
-            <table class='table table-striped table-bordered'>
-              <thead>
-                <td> Star Rating </td>
-                <td> Book Title </td>
-                <td> Author </td>
-                <td> Review </td>
-              </thead>
+            <div class='col-md-12'>
+      
+              <table class='table table-striped table-bordered'>
+                <thead>
+                  <td> Star Rating </td>
+                  <td> Book Title </td>
+                  <td> Author </td>
+                  <td> Review </td>
+                </thead>
 
-              <tbody ng-repeat="bookreview in jsCtrl.bookreviews">
-                <td>{{bookreview.starRating}} </td>
-                <td>{{bookreview.title}} </td>
-                <td>{{bookreview.author}} </td>
-                <td>{{bookreview.review}} </td>
-              </tbody>
-            </table>
-          </div>
-  </div>
+                <tbody ng-repeat="bookreview in jsCtrl.bookreviews">
+                  <td>{{bookreview.starRating}} </td>
+                  <td>{{bookreview.title}} </td>
+                  <td>{{bookreview.author}} </td>
+                  <td>{{bookreview.review}} </td>
+                </tbody>
+              </table>
+            </div>
+    </div>
 
 
 
@@ -45,6 +45,8 @@
 
 
     <form ng-controller='ReviewController as reviewCtrl' ng-submit='reviewCtrl.addReview(book)'>
+
+      <div class='row'> 
 
             <div class= 'col-md-2'>
               <select ng-model="reviewCtrl.book.starRating" ng-options="starRating for starRating in [5,4,3,2,1]" class='form-control'>
@@ -68,6 +70,7 @@
               <button type="submit" class='btn btn-success'>Add Review</button>
             </div>
 
+      </div>
 
     </form>
 </div>
@@ -125,7 +128,7 @@
                 <button type='submit' class= 'btn btn-success'> Add Review</button>
               </div>
 
-              <p ng-if="createController.errors"> {{createController.errors}} </p>
+              
             </div>
       </form>
   </div>
@@ -140,43 +143,4 @@
 
 
 
-<!-- Footer -->
-<div class='navbar navbar-default navbar-static-bottom'>
-    <div class='container'>
-
-    <div class = 'row'>
-
-      <div class= 'col-md-3'>
-        <h3>Footer</h3>
-      </div>
-
-      <div class= 'col-md-3'>
-       <h4>Section 1</h4>
-       <p>1........... </p>
-       <p>2........... </p>
-       <p>3........... </p>
-       <p>4........... </p>
-      </div>
-
-      <div class= 'col-md-3'>
-        <h4>Section 2</h4>
-       <p>1........... </p>
-       <p>2........... </p>
-       <p>3........... </p>
-       <p>4........... </p>
-      </div>
-
-      <div class= 'col-md-3'>
-        <h4>Section 3</h4>
-        <p>1........... </p>
-       <p>2........... </p>
-       <p>3........... </p>
-       <p>4........... </p>
-      </div>
-
-
-    </div>
-
-
-  </div>
 </div>
