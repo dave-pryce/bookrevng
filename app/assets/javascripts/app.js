@@ -51,8 +51,10 @@ angular.module('bookReview')
     $http({method: 'POST', url: '/reviews/new.json', data: book})
     .catch(function(book) {
       controller.errors = book.data.error;
-    })
+    });
    };
+
+
 });
 
 
