@@ -24,13 +24,11 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   # GET /reviews/new.json
   def new
-    @review = Review.new
+    review = Review.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @review }
+    format.json { render json: @review }
     end
-  end
+
 
   # GET /reviews/1/edit
   def edit
@@ -40,18 +38,19 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(params[:review])
+    review = Review.new(review_params)
 
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render json: @review, status: :created, location: @review }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
+      if review.save
+            render json: review, status: 201, location: review 
+  end
+
+
+    private
+      def review_params
+        params.require(:review).permit(:starRating, :desc, :reviewedBy)
       end
     end
-  end
+
 
   # PUT /reviews/1
   # PUT /reviews/1.json
