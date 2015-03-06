@@ -25,8 +25,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new.json
   def new
     review = Review.new
-
-    format.json { render json: @review }
+    render json: review
     end
 
 
