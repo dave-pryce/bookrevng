@@ -19,10 +19,10 @@ angular.module('bookReview')
    this.saveReview = function(book){
       $http({
       method: 'POST', 
-      url: '/reviews/new.json', 
+      url: '/reviews.json', 
       data: book
         })
-      console.log(this.data);
+      console.log(this.book)
      }
 
   });

@@ -24,8 +24,8 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   # GET /reviews/new.json
   def new
-    review = Review.new
-    render json: review
+    @review = Review.new
+    render json: @review.as_json
     end
 
 
@@ -37,16 +37,19 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    review = Review.new(review_params)
+    @review = Review.new(review_params)
 
-      if review.save
-            render json: review, status: 201, location: review 
+      if @review.save
+            render json: @review.as_json, status: ok
+      else 
+            render json: {review: @review.errors, status: :no_content}
+
   end
 
 
-    private
-      def review_params
-        params.require(:review).permit(:starRating, :desc, :reviewedBy)
+   private
+     def review_params
+       params.require(:review).permit(:starRating, :desc, :reviewedBy)
       end
     end
 
