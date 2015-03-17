@@ -13,44 +13,45 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
-    @review = Review.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @review }
-    end
   end
 
   # GET /reviews/new
   # GET /reviews/new.json
-  def new
-    @review = Review.new
-    render json: @review.as_json
-    end
+  #def new
+  #  @review = Review.new
+  #end
 
 
   # GET /reviews/1/edit
   def edit
-    @review = Review.find(params[:id])
+    
   end
 
   # POST /reviews
   # POST /reviews.json
-        def create
-          @review = Review.new #(review_params)
+      def create
+          @review = Review.new(review_params)
 
-            if @review.save
-                  render json: @review.as_json#, status: ok
-            else 
-                  render json: {review: @review.errors, status: :no_content}
-
-            end
+        respond_to do |format|
+          if @review.save
+            format.html { redirect_to @review, notice: 'Review successfully created.' }
+            format.json { render json: @reviews }
+          else
+            format.html { render :new }
+            format.json { render json: @review.errors, status: :unprocessable_entity }
+          end
         end
+      end
+  
 
 
-      # def review_params
-      # params.require(:review).permit(:starRating, :desc, :reviewedBy)
-      # end
+ 
+      def review_params
+      params.require(:review).permit(:starRating, :desc, :reviewedBy)
+      end
+
+    
   
 
   # PUT /reviews/1
@@ -80,4 +81,7 @@ class ReviewsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end
+
