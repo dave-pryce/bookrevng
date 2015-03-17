@@ -21,10 +21,10 @@ angular.module('bookReview')
       $http({
       method: 'POST', 
       url: '/reviews.json', 
-      data: book
+      data: book,
+     // headers : { 'Content-Type': 'application/json'}
         })
-      
-      console.log(this.book)
+    console.log(this.book)
      }
 
   });

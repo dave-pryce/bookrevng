@@ -47,9 +47,9 @@ class ReviewsController < ApplicationController
 
 
  
-      def review_params
-      params.require(:review).permit(:starRating, :desc, :reviewedBy)
-      end
+     def review_params
+     params.require(:review).permit(:starRating, :desc, :reviewedBy)
+     end
 
     
   
