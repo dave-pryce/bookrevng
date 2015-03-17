@@ -26,3 +26,12 @@ angular.module('bookReview')
      }
 
   });
+
+
+
+/* Json format
+{"starRating" : "5",
+"desc" : "Awesome book",
+"reviewedBy" : "dp"
+}
+*/
