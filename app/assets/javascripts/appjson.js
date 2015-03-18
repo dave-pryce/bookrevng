@@ -17,16 +17,13 @@ angular.module('bookReview')
 angular.module('bookReview')
 .controller('AddReviewController', function($http) {
    this.saveReview = function(book){
-
       $http({
       method: 'POST', 
       url: '/reviews.json', 
-      data: book,
-     // headers : { 'Content-Type': 'application/json'}
-        })
-    console.log(this.book)
-     }
-
+      headers: {'Content-Type' : 'application/json'},
+      data: book
+            })
+                                  }
   });
 
 
