@@ -14,25 +14,23 @@ angular.module('bookReview')
 
 
 
-var breview = {
-"starRating" : 5,
-"desc" : "added by var object",
-"reviewedBy" : "var object"
-};
-
 // Post data to API
 angular.module('bookReview')
 .controller('AddReviewController', function($http) {
-  // var controller = this;
+ //var controller = this;
    this.saveReview = function(book){
- //   controller.errors = null;
+  //  controller.errors = null;
       $http({
       method: 'POST', 
       url: '/reviews.json', 
-      data: breview})
-      //data : book})
- //     .catch(function(book) {controller.errors = book.data.error})
+      //data: {"starRating" : 2,"desc" : "test xxx333 test test","reviewedBy" : "var object"}
+      data : this.book
+      })
+   //   .catch(function(book) {controller.errors = book.data.error})
+   //  .success(function(book) {controller.book.push(book)})
+    // console.log(this.book)
      }
+
 
   });
 
