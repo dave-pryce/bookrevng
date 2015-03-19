@@ -9,8 +9,8 @@
 Review.delete_all
 
 reviews = Review.create ([
-     {starRating: 1, desc: "Harry Potter", reviewedBy: "DP"},
-     {starRating: 2, desc: "Game Changer", reviewedBy: "AB"},
-     {starRating: 4, desc: "Workout", reviewedBy: "CD"},
+     {starRating: 1, bookname: "Harry Potter" , desc: "It's about wizards and quiddich" , reviewedBy: "DP"},
+     {starRating: 2, bookname: "Game Changer", desc: "How to gamify stuff" , reviewedBy: "AB"},
+     {starRating: 4, bookname: "Workout", desc: "Cool tools and tip from the mainman Jurgen", reviewedBy: "CD"},
 
 	])

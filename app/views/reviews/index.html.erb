@@ -1,7 +1,7 @@
 <!-- Header -->
 <div class='navbar navbar-inverse navbar-static-top'>
     <div class='container'>
-        <a class='navbar-brand'> Angular Book Review App </a>
+        <a class='navbar-brand'> Angular Rails Book Review App </a>
         <ul class='nav navbar-nav navbar-right'> 
           <li class><a>About</a></li>
         </ul>
@@ -40,7 +40,7 @@
 
 <!-- Form -->
 
-    <h2> Add a review - In front end </h2>
+    <h2> Add a review - In front end temporary </h2>
 
 
     <form ng-controller='ReviewController as reviewCtrl' ng-submit='reviewCtrl.addReview(book)'>
@@ -88,12 +88,14 @@
     <table class='table table-striped table-bordered'>
               <thead>
                 <td> Star Rating </td>
-                <td> Book Desc </td>
+                <td> Book Name  </td>
+                <td> Book Review </td>
                 <td> Reviewed By </td>
               </thead>
 
           <tbody ng-repeat="book in bookCtrl.books">
               <td>{{book.starRating}} </td>
+              <td>{{book.bookname}}</td>
               <td>{{book.desc}} </td>
               <td>{{book.reviewedBy}}</td>
           </tbody>
@@ -118,8 +120,11 @@
               </select>
             </div>
 
+              <div class= 'col-md-2'>
+                <input type="text" ng-model="addrCtrl.book.bookname" class='form-control' placeholder="Book Name"></input>
+              </div>
 
-              <div class= 'col-md-5'>
+              <div class= 'col-md-4'>
                 <input type="textarea" ng-model="addrCtrl.book.desc" class='form-control' placeholder="Book Review"></input>
               </div>
 
@@ -138,12 +143,9 @@
 
 </div>
 
-
-
-
+</div>
 
 </div>
 
 
 
-</div>
