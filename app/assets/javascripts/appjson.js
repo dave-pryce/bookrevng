@@ -16,18 +16,21 @@ angular.module('bookReview')
 // Post data to API
 angular.module('bookReview')
 .controller('AddReviewController', function($http) {
+   var controller = this;
    this.saveReview = function(book){
+    controller.errors = null;
       $http({
       method: 'POST', 
       url: '/reviews.json', 
-      headers: {'Content-Type' : 'application/json'},
-      data: book
-            })
-                                  }
+      data: book})
+      .catch(function(book) {controller.errors = book.data.error})
+     }
+
   });
 
 
 
+//     headers: '{contentType : application/json}'
 /* Json format
 {"starRating" : "5",
 "desc" : "Awesome book",

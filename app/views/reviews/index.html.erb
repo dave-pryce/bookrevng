@@ -104,7 +104,11 @@
   <!-- Form -->
       <h2> Add a review - in back end </h2>
 
+
+
       <form ng-controller='AddReviewController as addrCtrl' ng-submit='addrCtrl.saveReview(book)'>
+
+        <p ng-if="addrCtrl.errors"> {{addrCtrl.errors}} </p>
 
             <div class='row'> 
             
