@@ -25,6 +25,8 @@ angular.module('bookReview')
         url: '/reviews.json', 
         data : this.book
         })
+
+        .success(function(){$location.path('/reviews.json'); });
        //   .catch(function(book) {controller.errors = book.data.error})
       // console.log(this.book)
      
