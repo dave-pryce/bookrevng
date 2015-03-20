@@ -9,7 +9,7 @@ angular.module('bookReview')
                 url: '/reviews.json'}).success(function(data){
                 controller.books = data;
               });
-  });  
+              });  
 
 
 
@@ -18,16 +18,16 @@ angular.module('bookReview')
 angular.module('bookReview')
 .controller('AddReviewController', function($http) {
  //var controller = this;
-   this.saveReview = function(book){
-  //  controller.errors = null;
-      $http({
-      method: 'POST', 
-      url: '/reviews.json', 
-      data : this.book
-      })
-   //   .catch(function(book) {controller.errors = book.data.error})
-   .success(function(response) {books.push(response.data)})
-    // console.log(this.book)
+     this.saveReview = function(book){
+    //  controller.errors = null;
+        $http({
+        method: 'POST', 
+        url: '/reviews.json', 
+        data : this.book
+        })
+       //   .catch(function(book) {controller.errors = book.data.error})
+      // console.log(this.book)
+     
      }
 
 
