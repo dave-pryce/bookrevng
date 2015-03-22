@@ -17,7 +17,6 @@ angular.module('bookReview')
 // Post data to API
 angular.module('bookReview')
 .controller('AddReviewController', function($http) {
-  var controller = this;
      this.saveReview = function(book){
         $http({
         method: 'POST', 
@@ -25,7 +24,10 @@ angular.module('bookReview')
         data : this.book
         })
 
-     .success(function(){controller.push(this.book)});
+       .error(function(){ console.log("fail"); });
+       .success(function(){ console.log("success");})
+      //  .success(function(){ });
+
      this.book = {}; // clear form
      }
 
