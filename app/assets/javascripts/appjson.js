@@ -1,4 +1,5 @@
 // Get data from API
+
 angular.module('bookReview')
   .controller('DisplayReviewController', function($http){
     var controller = this;
@@ -10,6 +11,22 @@ angular.module('bookReview')
                 controller.books = data;
               });
               });  
+
+
+/*
+  angular.module('bookReview')
+  .controller('DisplayReviewController', function($http, $scope){
+    $scope.books = [];
+    
+              $http({ 
+                method: 'GET', 
+                url: '/reviews.json',
+                data: $scope.books 
+               })
+                 console.log($scope.books)
+      
+              });  
+*/
 
 
 
@@ -24,7 +41,7 @@ angular.module('bookReview')
         data : this.book
         })
 
-       .error(function(){ console.log("fail"); });
+     //  .error(function(){ console.log("fail"); });
        .success(function(){ console.log("success");})
       //  .success(function(){ });
 
