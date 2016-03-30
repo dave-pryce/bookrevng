@@ -1,4 +1,6 @@
-== Basic Angular JS app with a Ruby On Rails back end using Bootstrap UI CSS and components.
+== README
+
+Basic Angular JS app with a Ruby On Rails back end using Bootstrap UI CSS and components.
 
 App allows users to enter book reviews.
 
